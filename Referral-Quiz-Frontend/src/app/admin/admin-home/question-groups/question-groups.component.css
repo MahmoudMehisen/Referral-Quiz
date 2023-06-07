@@ -1,0 +1,36 @@
+.nav-tabs {
+  padding: 10px;
+  border: 1px solid #8B4513;
+  background-color: #F5DEB3;
+}
+.nav-tabs li.active a {
+  background-color: brown;
+  border: 1px solid black;
+  color: #FFF; /* white */
+}
+.nav-tabs li a {
+  background-color: #F5DEB3;
+  padding: 10px 15px;
+  border: 1px solid #8B4513;
+  color: #8B4513;
+}
+.tab-pane {
+  padding: 20px;
+  border: 1px solid #8B4513;
+  background-color: #FFF;
+}
+.app-question {
+  padding: 10px;
+  border: 1px solid #8B4513;
+  background-color: #F5DEB3;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.button-container button {
+  margin-right: 10px;
+}

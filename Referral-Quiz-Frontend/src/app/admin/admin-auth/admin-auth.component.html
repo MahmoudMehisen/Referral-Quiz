@@ -1,0 +1,24 @@
+<div class="login-container">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <img src="../../assets/background.jpg" alt="Background image" class="background-image">
+    <div *ngIf="isLoading" style="text-align: center">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="login-form-container">
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+        <h1 class="login-title">Login</h1>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="username" id="username" class="form-control" ngModel name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" ngModel name="password" required minlength="5" placeholder="Enter Password">
+        </div>
+        <div style="text-align: center">
+          <button mat-flat-button color="warn" type="submit" [disabled]="!authForm.valid">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

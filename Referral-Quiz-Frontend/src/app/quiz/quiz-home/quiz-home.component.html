@@ -1,0 +1,26 @@
+<div>
+  <img src="../../assets/background.jpg" alt="Background image" class="background-image">
+
+  <div *ngIf="isLoading" style="text-align: center">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div style="padding: 20px;" *ngIf="!isLoading" class="guest-info">
+    <h2>Guest Information</h2>
+    <p>Phone Number: {{ guest.phoneNumber }}</p>
+    <ng-container *ngIf="guest.email !== null">
+      <p>Email: {{ guest.email }}</p>
+      <p>Points: {{ guest.totalPoints }}</p>
+      <button *ngIf="guest.canPlay && quizMetadata !== null && quizMetadata.activeGroupId !== null" (click)="playGame()" class="btn btn-success">Play Game</button>
+    </ng-container>
+    <ng-container *ngIf="guest.email === null">
+      <p>Please add your email:</p>
+      <form (submit)="updateEmail()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+        <button style="padding: 10px;" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </ng-container>
+    <button (click)="redeems()" class="btn btn-primary">Redeems</button>
+    <button (click)="logout()" class="btn btn-danger">Logout</button>
+  </div>
+</div>

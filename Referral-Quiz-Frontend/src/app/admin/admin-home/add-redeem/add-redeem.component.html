@@ -1,0 +1,20 @@
+<div *ngIf="isLoading" style="text-align: center">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div *ngIf="!isLoading">
+  <h2>Add Redeem</h2>
+  <form #addRedeemForm="ngForm" (ngSubmit)="submit(addRedeemForm)" novalidate>
+    <label>
+      Name:
+      <input name="redeemName" type="text" [(ngModel)]="redeemName" required>
+    </label>
+    <label>
+      Points:
+      <input name="pointsToRedeem" type="number" [(ngModel)]="pointsToRedeem" required min="1">
+    </label>
+    <div *ngIf="isAddedSuccessfully" class="alert alert-success" role="alert">
+      Question Added Successfully
+    </div>
+    <button mat-flat-button color="primary" [disabled]="!addRedeemForm.valid">Save</button>
+  </form>
+</div>

@@ -1,0 +1,41 @@
+.redeem-list {
+  margin-bottom: 20px;
+}
+
+.redeem-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.redeem-details {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.redeem-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.redeem-points {
+  margin-bottom: 0;
+}
+
+.redeem-list-footer {
+  margin-top: 10px;
+}
+
+.redeem-footer-text {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.redeem-footer-value {
+  font-weight: bold;
+}

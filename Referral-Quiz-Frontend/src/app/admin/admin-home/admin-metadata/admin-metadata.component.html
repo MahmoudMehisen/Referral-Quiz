@@ -1,0 +1,34 @@
+<div>
+  <h1 style="font-size: 30px; color: brown;text-align: start">Quiz Info</h1>
+  <form #metadataForm="ngForm" (ngSubmit)="onSave(metadataForm)" *ngIf="!isLoading"
+        style="display: flex; align-items: center">
+    <div style="flex: 2; margin-right: 10px;">
+      <label for="pointsPerQuestion">Points Per Questions</label>
+      <input type="number" id="pointsPerQuestion" class="form-control" [min]="1" required
+             ngModel="{{quizMetaData.pointsPerQuestion}}" name="pointsPerQuestion">
+    </div>
+    <div style="flex: 2; margin-right: 10px;">
+      <label for="pointsPerReferral">Points Per Referral</label>
+      <input type="number" id="pointsPerReferral" class="form-control" [min]="1" required
+             ngModel="{{quizMetaData.pointsPerReferral}}" name="pointsPerReferral">
+    </div>
+    <div style="flex: 3; margin-right: 10px;">
+      <label for="referralExpirationTime">Referral Expiration Time in ms</label>
+      <input type="number" id="referralExpirationTime" class="form-control" [min]="1"
+             ngModel="{{quizMetaData.referralExpirationTime}}" name="referralExpirationTime">
+    </div>
+    <div style="flex: 2; margin-right: 10px;">
+      <label for="canUserDoReferral">User Can Referral</label>
+      <input class="form-check-input" id="canUserDoReferral" type="checkbox"
+             [(ngModel)]="quizMetaData.canUserDoReferral" name="canUserDoReferral"/>
+    </div>
+
+    <div *ngIf="quizMetaData.activeGroupId !== null" style="flex: 1; margin-right: 10px; ">
+      <button mat-flat-button color="warn" type="button" (click)="stopQuiz()">Stop Quiz</button>
+    </div>
+
+    <div style="flex: 1; margin-right: 10px;">
+      <button mat-flat-button color="warn" type="submit">Save</button>
+    </div>
+  </form>
+</div>

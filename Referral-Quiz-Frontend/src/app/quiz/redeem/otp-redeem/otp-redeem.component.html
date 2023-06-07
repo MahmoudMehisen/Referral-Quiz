@@ -1,0 +1,14 @@
+<div class="otp-dialog">
+  <h2>OTP Verification</h2>
+
+  <div class="otp-input">
+    <p>Please enter the 6-digit OTP code:</p>
+    <input type="text" [(ngModel)]="otpCode" placeholder="OTP code" maxlength="6" [ngClass]="{'error': otpCode.length !== 6}">
+    <button class="submit-button" [disabled]="otpCode.length !== 6" (click)="submitOTP()">Submit</button>
+  </div>
+
+  <div class="cooldown-info">
+    <p>OTP request cooldown in progress. Wait {{ cooldownTime }} seconds before requesting a new OTP.</p>
+    <button class="cooldown-button" [disabled]="!cooldownExpired" (click)="requestOTP()">Request New OTP</button>
+  </div>
+</div>

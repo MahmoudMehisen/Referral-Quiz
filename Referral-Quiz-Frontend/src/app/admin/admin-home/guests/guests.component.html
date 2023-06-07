@@ -1,0 +1,33 @@
+<div class="container user-list-container p-4" style="height: 500px;">
+  <div class="row user-list-header">
+    <div class="col">
+      <h2 style="font-size: 30px; color: brown;font-weight: bold">Guests List</h2>
+    </div>
+  </div>
+  <div class="row user-list flex-fill">
+    <div class="col-12 user-row pb-2 border-bottom" *ngFor="let guest of guestsList; let ind = index">
+      <div class="col-4 d-flex align-items-center">
+        <div class="mr-2">
+          <p class="mb-0 font-weight-bold">Phone:</p>
+          <p class="mb-0 font-weight-bold">Email:</p>
+          <p class="mb-0 font-weight-bold">Points:</p>
+        </div>
+        <div>
+          <p class="mb-0 text-muted">{{guest.phoneNumber}}</p>
+          <p class="mb-0 text-muted">{{guest.email}}</p>
+          <p class="mb-0">{{guest.totalPoints}} points</p>
+        </div>
+      </div>
+      <div class="col-2 user-button d-flex align-items-center justify-content-center">
+        <button *ngIf="guest.canPlay" class="btn btn-danger" (click)="disable(ind)">Disable</button>
+        <button *ngIf="!guest.canPlay" class="btn btn-success" (click)="enable(ind)">Enable</button>
+      </div>
+    </div>
+  </div>
+  <div class="row user-list-footer mt-2">
+    <div style="display: flex" class="row">
+      <p class="mb-0 font-weight-bold mr-2">Total Guests:</p>
+      <p class="mb-0">{{ guestsList.length }}</p>
+    </div>
+  </div>
+</div>

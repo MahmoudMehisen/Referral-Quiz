@@ -1,0 +1,46 @@
+.welcome-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: rgba(256, 256, 256, 0.9);
+  border: 5px solid brown;
+  border-radius: 30px !important;
+}
+
+.text-card {
+  padding: 2rem;
+  text-align: center;
+  color: brown;
+}
+
+.text-header {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: brown;
+}
+.text-title{
+  text-align: center;
+  color: brown;
+}
+
+.text-body {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}

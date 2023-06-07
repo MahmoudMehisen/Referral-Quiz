@@ -1,0 +1,101 @@
+.redeem-list-header {
+  margin-bottom: 20px;
+}
+
+.redeem-list-title {
+  font-size: 30px;
+  color: brown;
+  font-weight: bold;
+}
+
+.redeem-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.redeem-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.redeem-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.redeem-points {
+  margin-bottom: 5px;
+}
+
+.redeem-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redeem-list-footer {
+  margin-top: 10px;
+}
+
+.redeem-footer-text {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.redeem-footer-value {
+  font-weight: bold;
+}
+
+.add-redeem-button {
+  margin-top: 10px;
+}
+.welcome-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: rgba(256, 256, 256, 0.9);
+  border: 5px solid brown;
+  border-radius: 30px !important;
+}
+
+.text-card {
+  padding: 2rem;
+  text-align: center;
+  color: brown;
+}
+
+.text-header {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: brown;
+}
+.text-title{
+  text-align: center;
+  color: brown;
+}
+
+.text-body {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}

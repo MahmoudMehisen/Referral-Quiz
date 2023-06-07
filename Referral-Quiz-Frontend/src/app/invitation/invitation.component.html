@@ -1,0 +1,17 @@
+<div *ngIf="isLoading" style="text-align: center">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div *ngIf="!isLoading" class="my-5">
+  <form (submit)="checkToken()" class="mx-auto col-sm-6">
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" [(ngModel)]="phone" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="!isLoading && phoneEntered && !isTokenVerified" class="alert alert-danger my-5">
+  Token verification failed. Please check your invitation link or phone number and try again.
+</div>

@@ -1,0 +1,23 @@
+<div>
+  <img src="../../assets/background.jpg" alt="Background image" class="background-image">
+
+  <div *ngIf="isLoading" style="text-align: center">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div *ngIf="!isLoading" class="container redeem-list-container p-4">
+    <div class="redeem-list-header">
+      <h2 class="redeem-list-title">Redeems List</h2>
+    </div>
+    <div class="redeem-list">
+      <div class="redeem-row" *ngFor="let redeem of redeemList">
+        <div class="redeem-details">
+          <p class="redeem-name">{{ redeem.redeemName }}</p>
+          <p class="redeem-points">Points: {{ redeem.pointsToRedeem }}</p>
+        </div>
+        <div class="redeem-button">
+          <button class="btn btn-primary" (click)="requestRedeem(redeem)">Request Redeem</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

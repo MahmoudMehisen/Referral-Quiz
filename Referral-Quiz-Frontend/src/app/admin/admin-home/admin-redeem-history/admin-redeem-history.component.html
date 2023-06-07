@@ -1,0 +1,20 @@
+<div class="container redeem-list-container p-4">
+  <div class="redeem-list-header">
+    <h2 class="redeem-list-title">Redeems List</h2>
+  </div>
+  <div class="redeem-list">
+    <div class="redeem-row" *ngFor="let redeemHistory of redeemHistoryList; let ind = index">
+      <div class="redeem-details">
+        <p class="redeem-name">Guest Phone:{{ redeemHistory.guestPhoneNumber }}</p>
+        <p class="redeem-name">Redeem: {{ redeemHistory.redeemName }}</p>
+        <p class="redeem-points">Points: {{ redeemHistory.pointsForRedeem }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="redeem-list-footer mt-2">
+    <div class="row">
+      <p class="redeem-footer-text">Total Redeem History:</p>
+      <p class="redeem-footer-value">{{ redeemHistoryList.length }}</p>
+    </div>
+  </div>
+</div>

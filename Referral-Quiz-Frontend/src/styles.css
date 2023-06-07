@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Customize Toastr container */
+.toast-container {
+  z-index: 9999;
+  position: fixed;
+  top: 20px; /* Adjust the top position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Customize Toastr notification */
+.toast {
+  position: relative;
+  background-color: #f8f9fa; /* Set the background color */
+  color: #343a40; /* Set the text color */
+  padding: 16px;
+  border-radius: 8px; /* Add rounded border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+}
+
+/* Customize Toastr title and message */
+.toast-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.toast-message {
+  font-size: 16px;
+}
+
+/* Customize Toastr close button */
+.toast-close-button {
+  color: #6c757d;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.toast-close-button:hover {
+  color: #343a40;
+}
+
+
+.toast-error {
+  background-color: #ff5c5c;
+  color: #fff;
+}
+
+.toast-success {
+  background-color: green;
+  color: #fff;
+}

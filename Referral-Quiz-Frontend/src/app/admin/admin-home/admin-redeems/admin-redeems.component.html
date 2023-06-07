@@ -1,0 +1,35 @@
+<div class="container redeem-list-container p-4">
+  <div class="redeem-list-header">
+    <h2 class="redeem-list-title">Redeems List</h2>
+  </div>
+  <div class="redeem-list">
+    <div class="redeem-row" *ngFor="let redeem of redeemList; let ind = index">
+      <div class="redeem-details">
+        <div class="form-group redeem-field">
+          <label for="redeemName{{ind}}" class="redeem-label">Name:</label>
+          <input id="redeemName{{ind}}" type="text" class="form-control" [(ngModel)]="redeem.redeemName"
+                 [disabled]="!editModeList[ind]">
+        </div>
+        <div class="form-group redeem-field">
+          <label for="pointsToRedeem{{ind}}" class="redeem-label">Points:</label>
+          <input id="pointsToRedeem{{ind}}" type="number" class="form-control" [(ngModel)]="redeem.pointsToRedeem"
+                 [disabled]="!editModeList[ind]">
+        </div>
+        <div class="form-group redeem-field">
+          <label class="redeem-label">Available:</label>
+          <input type="checkbox" [(ngModel)]="redeem.available" [disabled]="!editModeList[ind]">
+        </div>
+      </div>
+      <div class="redeem-button">
+        <button class="btn btn-primary" (click)="toggleEditMode(ind)">{{ editModeList[ind] ? 'Save' : 'Edit' }}</button>
+      </div>
+    </div>
+  </div>
+  <div class="redeem-list-footer mt-2">
+    <div class="row">
+      <p class="redeem-footer-text">Total Redeems:</p>
+      <p class="redeem-footer-value">{{ redeemList.length }}</p>
+    </div>
+  </div>
+  <button mat-flat-button color="warn" class="add-redeem-button" (click)="onAddRedeem()">New Redeem</button>
+</div>

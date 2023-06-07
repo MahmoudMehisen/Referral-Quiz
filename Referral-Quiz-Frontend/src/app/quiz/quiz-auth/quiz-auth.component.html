@@ -1,0 +1,28 @@
+<div class="login-container">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <img src="../../assets/background.jpg" alt="Background image" class="background-image">
+    <div *ngIf="isLoading" style="text-align: center">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="login-form-container">
+      <form #authForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+        <h1 class="login-title">Welcome to the Quiz!</h1>
+        <div class="form-group">
+          <label for="username">Phone number or email address:</label>
+          <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" #usernameInput="ngModel" required pattern="^[0-9]*$|^[^\s@]+@[^\s@]+\.[^\s@]+$">
+          <div *ngIf="usernameInput.touched && usernameInput.invalid">
+            <div *ngIf="usernameInput.errors?.['required']">
+              Please enter your phone number or email.
+            </div>
+            <div *ngIf="usernameInput.errors?.['pattern']">
+              Please enter a valid phone number or email address.
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center">
+          <button mat-flat-button color="warn" type="submit" [disabled]="!authForm.valid">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

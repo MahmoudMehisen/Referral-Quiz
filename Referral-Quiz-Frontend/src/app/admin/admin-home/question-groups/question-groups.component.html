@@ -1,0 +1,34 @@
+<ul class="nav nav-tabs">
+  <li *ngFor="let group of groupsList; let i = index" [class.active]="i === activeTabIndex">
+    <a style="cursor: pointer;" (click)="setActiveTab(i)">{{ group.name }}</a>
+  </li>
+</ul>
+<div class="tab-content">
+  <div *ngFor="let group of groupsList; let groupInd = index" class="tab-pane"
+       [class.active]="groupInd === activeTabIndex">
+    <div style="height: 500px; overflow-y: scroll;">
+      <div *ngFor="let quest of group.questions; let questionInd = index">
+        <app-question [groupInd]="groupInd" [questionInd]="questionInd" [question]="quest"
+                      [playedTimes]="group.numberOfPlayed"></app-question>
+      </div>
+    </div>
+    <div class="button-container">
+      <button mat-flat-button color="warn" (click)="onAddQuestion(group.id)">New Question</button>
+      <label>Times of played={{group.numberOfPlayed}}</label>
+      <button *ngIf="quizMetadata.activeGroupId !== group.id" mat-flat-button color="warn"
+              (click)="activateGroup(group.id)">
+        Activate
+      </button>
+      <button mat-flat-button color="warn" [disabled]="true" *ngIf="quizMetadata.activeGroupId === group.id">Activated
+      </button>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+

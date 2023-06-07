@@ -1,0 +1,25 @@
+<div class="question-card">
+  <div *ngIf="isLoading" style="text-align: center">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+
+  <div *ngIf="!isLoading">
+    <div class="question-number">Question {{questionInd + 1}}</div>
+    <div class="question-text" style="text-align: start">{{question.questionText}}</div>
+    <div class="options">
+      <label style="text-align: start"
+             *ngFor="let option of question.options; let i = index"
+             [ngStyle]="{ 'background-color': option.isCorrectAnswer ? '#007400' : '#990000' }">
+        <span class="option-text" style="color: white; font-size: 20px;padding: 5px;">{{option.optionText}}</span>
+        <span *ngIf="playedTimes!==0" class="option-text"
+              style="color: white; font-size: 20px;padding: 5px;">{{((option.selectedTimes / playedTimes) * 100).toFixed(2)}}
+          %</span>
+      </label>
+    </div>
+    <div style="display: flex; justify-content: space-around">
+      <button mat-flat-button color="warn" (click)="onEdit()">Edit</button>
+      <button mat-flat-button color="warn" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
+</div>
+<hr>

@@ -1,0 +1,25 @@
+<div *ngIf="isLoading" style="text-align: center">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div *ngIf="!isLoading">
+  <h2>Generate Referral Token</h2>
+  <form #generateForm="ngForm" (ngSubmit)="submit(generateForm)" novalidate>
+
+
+    <label>
+      Phone Number:
+      <input name="phoneNumber" type="tel" [(ngModel)]="phoneNumber" required>
+    </label>
+
+    <ng-container style="padding: 15px;" *ngIf="isGeneratedSuccessfully">
+      <div style="padding: 15px;"  class="alert alert-success" role="alert">
+        <ng-template #linkTemplate>
+          <a href="{{token}}" target="_blank">{{token}}</a>
+        </ng-template>
+        <ng-container *ngTemplateOutlet="linkTemplate"></ng-container>
+      </div>
+      <button  class="btn btn-secondary" type="button" (click)="copyToClipboard()">Copy to Clipboard</button>
+    </ng-container>
+    <button mat-flat-button color="warn" [disabled]="!generateForm.valid">Submit</button>
+  </form>
+</div>

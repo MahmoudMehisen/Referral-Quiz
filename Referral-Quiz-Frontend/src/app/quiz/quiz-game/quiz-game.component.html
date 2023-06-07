@@ -1,0 +1,31 @@
+<div>
+  <img src="../../assets/background.jpg" alt="Background image" class="background-image">
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="quiz-questions">
+          <h2 class="mb-4">Quiz Questions</h2>
+          <ul class="list-unstyled">
+            <li *ngFor="let question of questions" class="mb-4">
+              <h5>{{ question.questionText }}</h5>
+              <div class="form-check" *ngFor="let answer of question.options">
+                <input class="form-check-input" type="radio" name="{{ question.id}}" id="{{ question.id}}}"
+                       [value]="answer.optionText" (change)="selectAnswer(question.id, answer.id)">
+                <label class="form-check-label" for="{{ answer.id }}">
+                  {{ answer.optionText }}
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm-12">
+          <button class="btn btn-primary" (click)="submitAnswers()" [disabled]="!canSubmit">Submit Answers</button>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>

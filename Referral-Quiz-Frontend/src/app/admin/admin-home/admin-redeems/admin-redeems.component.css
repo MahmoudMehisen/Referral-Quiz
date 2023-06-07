@@ -1,0 +1,58 @@
+.redeem-list-container {
+  height: 500px;
+}
+
+.redeem-list-header {
+  margin-bottom: 20px;
+}
+
+.redeem-list-title {
+  font-size: 30px;
+  color: brown;
+  font-weight: bold;
+}
+
+.redeem-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.redeem-details {
+  display: flex;
+  flex: 1;
+}
+
+.redeem-field {
+  margin-right: 20px;
+}
+
+.redeem-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.redeem-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redeem-list-footer {
+  margin-top: 10px;
+}
+
+.redeem-footer-text {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.redeem-footer-value {
+  font-weight: bold;
+}
+
+.add-redeem-button {
+  margin-top: 10px;
+}
